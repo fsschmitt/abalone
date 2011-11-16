@@ -16,14 +16,9 @@ movimento
 	casa_destino
 
 casa
+	num
 	cor
-	top_left
-	top_right
-	left
-	right
-	bottom_left
-	bottom_right
-	
+		
 
 		 01  02  03  04  05
 	   06  07  08  09  10  11
