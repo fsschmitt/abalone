@@ -34,3 +34,58 @@ casa
      44  45  46  47  48  49  50
 	   51  52  53  54  55  56
 	     57  58  59  60  61
+		 
+		 
+Java:
+
+String numero;
+		int num;
+		BufferedReader reader;
+        reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("What is the number? ");
+        numero = reader.readLine();
+        num=Integer.parseInt(numero);
+        Casa c = casas.get(num-1);
+		//for(Casa c : casas){
+			if(c.linha < 6){
+				//top-left
+				if((c.numero-(c.linha+4)>0) && casas.get(c.numero-(c.linha+4)-1).linha == c.linha-1)
+					System.out.println("numero top-left "+c.numero+": "+(c.numero-(c.linha+4)));
+				//top-right	
+				if(((c.numero-c.linha-3)>0) && casas.get((c.numero-c.linha-3)-1).linha == c.linha-1)
+					System.out.println("numero top-right "+c.numero+": "+(c.numero-c.linha-3));
+				//left
+				if(((c.numero-1)>0) && casas.get(c.numero-2).linha == c.linha)
+					System.out.println("numero left "+c.numero+": "+(c.numero-1));
+				//right
+				if(((c.numero+1)<62) && casas.get(c.numero).linha == c.linha)
+					System.out.println("numero right "+c.numero+": "+(c.numero+1));
+			}
+			else{
+				//top-left
+				System.out.println("numero top-left "+c.numero+": "+(c.numero-15+c.linha));
+				//top-right	
+				System.out.println("numero top-right "+c.numero+": "+(c.numero-14+c.linha));
+				//left
+				if(((c.numero-1)>0) && casas.get(c.numero-2).linha == c.linha)
+					System.out.println("numero left "+c.numero+": "+(c.numero-1));
+				//right
+				if(((c.numero+1)<62) && casas.get(c.numero).linha == c.linha)
+					System.out.println("numero right "+c.numero+": "+(c.numero+1));
+			}
+			
+			if(c.linha < 5){
+				//bottom left
+				System.out.println("numero bottom left "+c.numero+": "+(c.numero+c.linha+4));
+				//bottom right
+				System.out.println("numero bottom right "+c.numero+": "+(c.numero+c.linha+5));
+				
+			}
+			else{
+				//bottom left
+				if((c.numero-c.linha+13)<62 && (casas.get(c.numero-c.linha+12).linha-1) == c.linha)
+					System.out.println("numero bottom left "+c.numero+": "+(c.numero-c.linha+13));
+				//bottom right
+				if((c.numero-c.linha+14)<62 && (casas.get(c.numero-c.linha+13).linha-1) == c.linha)
+					System.out.println("numero bottom right "+c.numero+": "+(c.numero-c.linha+14));
+			}
