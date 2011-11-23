@@ -1,1 +1,1 @@
-new TestMovimento().TestGoodUsage()
+new TestJogo().TestGoodUsage()
